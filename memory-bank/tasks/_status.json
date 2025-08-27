@@ -1,0 +1,41 @@
+{
+  "active_tasks": [
+    {
+      "title": "Move manager module out of memory bank to root directory",
+      "status": "in-progress",
+      "progress_percent": 65,
+      "updated_at": "2025-08-24 08:32",
+      "latest_work": "2025-08-24 08:32 — MAJOR TEST COVERAGE IMPROVEMENT: Added comprehensive TaskManager tests (13 tests, 100% coverage) and extended SpecManager tests (18 tests). Total test count: 78 tests, overall coverage improved to 75% (+30% improvement from baseline)",
+      "remaining_todo": [
+        "Create root/manager/ directory",
+        "Move __init__.py to root/manager/",
+        "Move spec_manager.py to root/manager/",
+        "Move task_manager.py to root/manager/",
+        "Move app.py to root directory",
+        "Move tests/ directory to root directory",
+        "Move conftest.py to root directory",
+        "Move pytest.ini to root directory",
+        "Move requirements.txt to root directory",
+        "Move Makefile to root directory",
+        "Search for all imports of memory-bank.manager",
+        "Update import statements to use root.manager",
+        "Check for hardcoded paths in code",
+        "Update any configuration files",
+        "Remove memory-bank/manager/ directory and moved files",
+        "Update documentation references",
+        "Final test validation and regression testing"
+      ]
+    },
+    {
+      "title": "Consolidate docker-compose into single stack",
+      "status": "in-progress",
+      "progress_percent": 80,
+      "updated_at": "2025-08-23 18:46",
+      "latest_work": "2025-08-23 18:32 — Task created and scoped based on user confirmation",
+      "remaining_todo": [
+        "Add brief run/scale notes"
+      ]
+    }
+  ],
+  "recently_completed": []
+}

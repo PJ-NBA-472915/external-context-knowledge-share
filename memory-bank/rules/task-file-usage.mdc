@@ -1,0 +1,222 @@
+---
+description: Always drive work from a single memory-bank/tasks/[taskname].json file; confirm the task first; keep it live-updated with progress, todos, changelog, and lessons; support a repo-wide In-Progress Tracker and a concise machine-readable Status Report.
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# Cursor Task Orchestration Rule (JSON-based)
+
+You must orchestrate every task via a `memory-bank/tasks/[current-date]-[taskname].json` file. Before any code or content changes, propose the task and get explicit confirmation.
+
+## Process
+
+### Overview
+- Always begin by creating a task file under memory-bank/tasks/[current date]-[taskname].json.
+- Fill it with your initial understanding of the task, including assumptions and open questions.
+- Work with the user in iterations to clarify the task and refine requirements.
+- Once the user confirms the task definition, begin executing the work directly in the task file.
+- As you work, record actions taken, progress updates, and lessons learned.
+- Continuously check your progress against the requirements.
+- Deliver the results and ensure that the task file captures the definition, progress, and outcomes.
+
+> Get the current date from the system with the 'date "+%Y-%m-%d"' command for file names.
+> Get the current date and time from the system with the 'date "+%Y-%m-%d %H:%M"' command for todo item timestamps.
+
+### Goals
+1. Easy to interpret — Clear for both agent and user.
+2. Reproducible steps — Standardised so any agent can follow it.
+3. Consistent results — Reliable outcomes every time.
+
+### Flow Diagram
+
+```txt
+flowchart TD
+
+  A[Start] --> B[Create memory-bank/tasks/[current date]-[taskname].json file]
+  B --> C[Write initial understanding of task]
+  C --> D[Iterate with user to clarify requirements]
+  D --> E{User confirms task definition?}
+  E -- No --> C
+  E -- Yes --> F[Work on the task file directly]
+  F --> G[Record actions, progress, lessons learned]
+  G --> H[Check progress against requirements]
+  H --> I{Requirements met?}
+  I -- No --> F
+  I -- Yes --> J[Deliver results & close task]
+  J --> K[End]
+```
+
+## 1) Confirmation Gate (do this first, before any work)
+- Pause and present a concise Task Proposal for confirmation. Ask:
+  1) Is this the correct task?
+  2) Are these success criteria and acceptance checks correct?
+  3) Is this the right breakdown into subtasks?
+- Do not start implementation until the user replies Confirm (minor edits OK; re-propose if scope meaningfully changes).
+
+Proposal format to present in chat (prior to work):
+- Task name: `<short, specific title>`
+- Goal: `<1–2 sentence outcome>`
+- Deliverables: `<list of concrete artefacts>`
+- Success criteria: `<objective checks/measurements>`
+- Acceptance checks: `<bulleted checks user can tick>`
+- Subtasks: `<numbered list of independent steps>`
+- Estimated effort: `<fibonacci numbers up to 13 or rough hours>`
+- Risks/assumptions: `<brief list>`
+
+## 2) Task File Location & Naming
+- Create or update: `memory-bank/tasks/[taskname].json`.
+- Prefer a slugged name, e.g. `memory-bank/tasks/2025-08-19-refactor-auth-guards.json`.
+- If a file already exists for the same task, append updates rather than creating duplicates (do not create duplicates with the same `id`).
+
+## 3) File Structure (JSON, must keep this structure)
+When the task is confirmed, generate a JSON file that conforms to `memory-bank/tasks/_schema.json`. Compute `progress_percent` from the To-Do checklist.
+
+Minimal example:
+
+```json
+{
+  "id": "2025-08-23-switch-task-files-to-json",
+  "title": "Switch task orchestration from Markdown to JSON",
+  "owner": "Jaak",
+  "status": "planned",
+  "created_at": "2025-08-23 18:11",
+  "updated_at": "2025-08-23 18:11",
+  "progress_percent": 0,
+  "tags": ["cursor", "task"],
+  "summary": "Short description.",
+  "success_criteria": [{"text": "…", "checked": false}],
+  "acceptance_checks": [{"text": "…", "checked": false}],
+  "subtasks": ["…"],
+  "todo": [{"text": "…", "status": "not-started", "date_started": null, "date_stopped": null}],
+  "changelog": [{"timestamp": "2025-08-23 18:11", "text": "File created."}],
+  "decisions": ["…"],
+  "lessons_learned": ["…"],
+  "issues_risks": ["…"],
+  "next_steps": ["…"],
+  "references": ["…"],
+  "migration": {"migrated": false, "source_path": null, "method": null, "migrated_at": null},
+  "metadata": {}
+}
+```
+
+## In-Progress Tracker (repo-wide)
+
+You should be able to query this repo at any time and get a snapshot focused on unfinished work.
+
+Collection rules
+- Scan all `memory-bank/tasks/*.json` files.
+- Extract: title, status, progress_percent, updated_at, the most recent changelog entry, and all To-Do items with status not equal to "done" with their timing information.
+- Sort active tasks by updated_at descending (most recently updated first).
+- For "Recently Completed", take up to 3 tasks with status: done, sorted by updated_at descending.
+- Include todo item start/stop timing in progress reporting where relevant.
+
+Report Format
+When asked for status, progress, or tracker, write/update `memory-bank/tasks/_status.json` and also present a human-readable summary in chat.
+
+`memory-bank/tasks/_status.json` structure (example):
+
+```json
+{
+  "active_tasks": [
+    {
+      "title": "Task Title",
+      "status": "in-progress",
+      "progress_percent": 42,
+      "updated_at": "2025-08-23 18:11",
+      "latest_work": "2025-08-23 18:05 — Fixed flake8 issues",
+      "remaining_todo": [
+        {"text": "Step 1", "status": "not-started", "date_started": "2025-08-24 08:00", "date_stopped": null}, 
+        {"text": "Step 2", "status": "not-started", "date_started": null, "date_stopped": null},
+        {"text": "Step 3", "status": "blocked", "date_started": "2025-08-24 09:00", "date_stopped": null}
+      ]
+    }
+  ],
+  "recently_completed": [
+    {
+      "title": "Another Task",
+      "done_on": "2025-08-22 19:19",
+      "summary": "2025-08-22 19:19 — Finished and verified."
+    }
+  ]
+}
+```
+
+## Live Updates Policy (throughout execution)
+- Always update updated_at, status, progress_percent, and relevant sections immediately after each meaningful action (commit, refactor, fix, test run, tool install, etc.).
+- Progress calculation: derive progress_percent from To-Do (status="done" ÷ total × 100, rounded to whole numbers). Keep Success Criteria and Acceptance Checks in sync.
+- Log each meaningful change in changelog with timestamp and one-line rationale.
+- Add short entries to Lessons Learned as insights emerge.
+- If blocked, set status: "blocked" and record the blocker in Issues / Risks with a proposed mitigation.
+- When starting work on a todo item, immediately set `date_started` field with current timestamp.
+- When completing a todo item, immediately update its status to `done` and set `date_stopped` field with current timestamp.
+- When a todo item is blocked or fails, update status to `blocked` or `failed` accordingly and record reasons in appropriate sections.
+
+## User Interaction Logging
+- Always log user prompts in the `prompts` array of the task file with a timestamp. This ensures a complete audit trail of the interaction.
+- Each prompt entry should include:
+  - `timestamp`: Current timestamp from `date "+%Y-%m-%d %H:%M"` command
+  - `text`: The exact user prompt/request
+  - `context`: Brief description of what was being worked on when the prompt was received
+- The `prompts` array provides a chronological record of all user interactions during task execution
+- This complements the `changelog` section which tracks agent actions and system changes
+- Example prompt entry:
+  ```json
+  {
+    "timestamp": "2025-08-23 18:30",
+    "text": "Can you add error handling to the database connection?",
+    "context": "Working on database integration module"
+  }
+  ```
+
+## Subtask Discipline
+- Break the main task into small, independently verifiable subtasks.
+- Before starting a subtask, add its steps to To-Do.
+- After finishing a subtask, tick its items, update progress_percent, and add a changelog entry.
+
+## Todo Item Status and Date Management
+- Each todo item must track `status`, `date_started` and `date_stopped` fields.
+- Todo item status values: `not-started`, `done`, `blocked`, `failed`.
+- When starting work on a todo item, set `date_started` using the current timestamp from `date "+%Y-%m-%d %H:%M"` (status can remain `not-started` until completion).
+- When completing a todo item successfully, set status to `done` and set `date_stopped` using the current timestamp from `date "+%Y-%m-%d %H:%M"`.
+- When a todo item is blocked, set status to `blocked` and record the blocker in Issues/Risks.
+- When a todo item fails, set status to `failed` and set `date_stopped` with timestamp, then record the failure reason.
+- Always use the terminal `date` command to get accurate timestamps - never hardcode or guess times.
+- Todo items with status `not-started` should have `date_started: null` and `date_stopped: null` (unless work has begun).
+- Todo items with status `not-started` but work in progress should have `date_started` populated and `date_stopped: null`.
+- Todo items with status `done` or `failed` should have both `date_started` and `date_stopped` populated.
+- Todo items with status `blocked` may have `date_started` populated but `date_stopped: null` until resolved.
+
+## Quantifying Progress
+- progress_percent must equal the percentage of To-Do items with status="done" (done ÷ total × 100, rounded to whole numbers).
+- If the plan changes (scope added/removed), update Subtasks and To-Do first, then re-compute progress.
+- Do not manually fudge the percentage.
+- Items with status `blocked` or `failed` do not count toward progress completion.
+
+## File Hygiene
+- Prefer amending the existing `memory-bank/tasks/[current date]-[taskname].json` rather than creating new files mid-stream.
+- Keep a consistent field order for readability.
+- Use UK English.
+- Be concise; avoid filler.
+
+## Completion
+- When all Acceptance Checks are checked (true) and all To-Do items have status="done":
+- Set task status: "done" and progress_percent: 100.
+- Ensure all completed todo items have both `date_started` and `date_stopped` properly set.
+- Add a final changelog entry noting completion.
+- Summarise outcomes in `summary` and capture final Lessons Learned.
+
+## Status & Report Triggers (quality of life)
+When the user types any of: status, tracker, progress, what's in progress, or asks for a report:
+1. Generate the tracker from all JSON tasks (spec above).
+2. Save/update it at `memory-bank/tasks/_status.json`.
+3. Post a concise human-readable summary in chat.
+4. If no active tasks exist, state "No active tasks. Latest completed:" and show the short list.
+
+---
+
+## Migration Note
+Legacy Markdown task files in `memory-bank/tasks/*.md` are deprecated. Use `scripts/migrate_tasks_to_json.py` to convert them. New tasks must be created as `.json` and validated against `memory-bank/tasks/_schema.json`.
+
+## Blank task template (JSON)
+See `memory-bank/tasks/_blank_task.json` for the canonical template and `memory-bank/tasks/_schema.json` for validation.

@@ -1,0 +1,33 @@
+{
+  "theme": "GitHub",
+  "mcpServers": {
+    "Figma Dev Mode MCP": {
+      "type": "sse",
+      "url": "http://127.0.0.1:3845/sse"
+    },
+    "puppeteer": {
+      "command": "node",
+      "args": ["./node_modules/@kirkdeam/puppeteer-mcp-server/puppeteer-mcp-server.js"],
+      "env": {
+        "PUPPETEER_EXECUTABLE_PATH": "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
+        "PUPPETEER_HEADLESS": "new",
+        "PUPPETEER_ARGS": "--disable-gpu --no-sandbox --disable-setuid-sandbox"
+      }
+    },
+    "deepwiki": {
+      "serverUrl": "https://mcp.deepwiki.com/sse"
+    }
+  },
+  "usageStatisticsEnabled": true,
+  "hideTips": false,
+  "hideBanner": true,
+  "maxSessionTurns": 50,
+  "summarizeToolOutput": {
+    "run_shell_command": {
+      "tokenBudget": 2000
+    }
+  },
+  "excludedProjectEnvVars": ["DEBUG", "DEBUG_MODE", "NODE_ENV"],
+  "includeDirectories": ["../.."],
+  "loadMemoryFromIncludeDirectories": false
+}
