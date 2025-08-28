@@ -2,3 +2,5 @@
 - Curated list of knowledge.
 - Human-readable
 - Make a plan that you can refer back to
+- Can refer back to past interactions if you record them
+- Source of truth

@@ -1,0 +1,4 @@
+- The prompt engineers talk about system prompts or root prompts.
+- The Cline extension is a smart root prompt that I thought was very nifty.
+- Missed the whole claud train so far.
+- The root prompts of some models are open source if you want to go have a look at how they structure them.

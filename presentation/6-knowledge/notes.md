@@ -1,0 +1,6 @@
+- Curate the knowledge it has access to
+- You will notice it becoming less effective as its head get fuller
+- Prevent rabbit holes
+- Spins on data
+- "Lost in the middle" phenomenon - agents struggle to recall information from middle of long contexts
+- Attention mechanisms become less effective with longer sequences
