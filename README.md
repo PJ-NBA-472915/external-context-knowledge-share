@@ -6,6 +6,8 @@
 
 📖 **Start here**: [docs/index.md](docs/index.md) - Main entrypoint with navigation and setup instructions
 
+> Link to slides here: [Presentation](./presentation/1-overview/slide.md)
+
 ## Repository Purpose
 
 This repository serves as a **Markdown book** designed for live presentation during knowledge-share sessions, with a long-lived store of research notes and experiments. It's built for technical peers to consume both synchronously (during live sessions) and asynchronously (for self-study and reference).
