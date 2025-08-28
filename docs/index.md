@@ -35,14 +35,15 @@ This repository serves as a **Markdown book** designed for live presentation dur
 - [Knowledge Sharing Patterns](10-concepts/knowledge-sharing-patterns.md)
 
 ### [20 - Research](20-research/)
-- [State Management Approaches](20-research/state-management-approaches.md)
-- [Distributed System Patterns](20-research/distributed-system-patterns.md)
-- [Agent Communication Protocols](20-research/agent-communication-protocols.md)
+- [Memory Architectures for AI Agents](20-research/memory-architectures.md)
+- [Code-Aware Retrieval Strategies](20-research/code-aware-retrieval.md)
+- [Memory Lifecycle Management](20-research/memory-lifecycle-management.md)
+- [Security and Governance in Memory Systems](20-research/security-governance.md)
 
 ### [30 - Experiments](30-experiments/)
 - [Locking Mechanism Tests](30-experiments/locking-mechanism-tests.md)
-- [Performance Benchmarks](30-experiments/performance-benchmarks.md)
-- [Failure Mode Analysis](30-experiments/failure-mode-analysis.md)
+- [Performance Benchmarks for Memory-Augmented AI Agents](30-experiments/performance-benchmarks.md)
+- [Failure Mode Analysis for Memory-Augmented AI Agents](30-experiments/failure-mode-analysis.md)
 
 ### [40 - Session Guides](40-session-guides/)
 - [Session 1: Introduction to External Context](40-session-guides/session-01-introduction.md)
@@ -61,6 +62,11 @@ This repository serves as a **Markdown book** designed for live presentation dur
 - **Format**: Markdown with clear problem statement, methodology, and findings
 - **Required Sections**: Abstract, Background, Methods, Results, Discussion, References
 - **Template**: Use `_templates/research/research-note-template.md`
+- **Current Research Areas**:
+  - Memory architectures and their trade-offs
+  - Code-aware retrieval strategies and context engineering
+  - Memory lifecycle management and adaptive systems
+  - Security and governance in memory-augmented systems
 
 ### Experiments
 - **Location**: `30-experiments/` directory
@@ -68,6 +74,10 @@ This repository serves as a **Markdown book** designed for live presentation dur
 - **Required Sections**: Hypothesis, Setup, Procedure, Results, Analysis, Conclusions
 - **Template**: Use `_templates/experiments/experiment-template.md`
 - **Data**: Store raw data in `assets/data/` with clear README documentation
+- **Current Experiment Areas**:
+  - Locking mechanisms and concurrency control
+  - Performance benchmarking and trade-off analysis
+  - Failure mode analysis and recovery mechanisms
 
 ### Session Guides
 - **Location**: `40-session-guides/` directory
@@ -95,6 +105,28 @@ This repository serves as a **Markdown book** designed for live presentation dur
 1. **Self-review**: Check all links and references
 2. **Peer review**: Have another contributor review for clarity and accuracy
 3. **Update index**: Ensure new content is properly linked in table of contents
+
+## Deep-Research Integration
+
+This repository integrates comprehensive research findings from the `deep-research/` directory, providing a bridge between cutting-edge academic research and practical implementation guidance.
+
+### Research Sources
+- **Memory Architectures**: Analysis of OS-inspired, version-controlled, and graph-based approaches
+- **Retrieval Strategies**: AST-aware chunking, graph-based retrieval, and context engineering
+- **Lifecycle Management**: Memory ingestion, summarization, and strategic forgetting
+- **Security Considerations**: Prompt injection, memory poisoning, and governance frameworks
+
+### Key Research Papers
+- MemoryOS: Hierarchical memory architectures for long-term dialogue
+- Git-Context-Controller (GCC): Version-controlled context management
+- cAST: AST-aware chunking for code retrieval
+- MCPTox: Benchmarking tool poisoning attacks on MCP
+
+### Industry Applications
+- **Production Platforms**: Memory-augmented agent frameworks and tools
+- **MCP Ecosystem**: Model Context Protocol implementations and standards
+- **Local-First Solutions**: Privacy-preserving memory architectures
+- **Security Tools**: Monitoring and defense mechanisms for AI memory systems
 
 ## Repository Setup
 

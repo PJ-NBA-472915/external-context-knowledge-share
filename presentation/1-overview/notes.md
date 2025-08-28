@@ -1,0 +1,4 @@
+- Knowledge has become cheap.
+- Will share this repo.
+- Quick talk about some practices that seem like big wins.
+- Would love it if someone is keen work with me on this and try different things.

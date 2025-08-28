@@ -1,0 +1,4 @@
+- Terrible source
+- Guy wrote a book about vibe coding
+- One of the tech podcasts that I listen to
+- "Talk to the plan"
