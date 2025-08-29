@@ -1,0 +1,14 @@
+**/.cursor/*
+
+# Assets
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.gif
+**/*.svg
+**/*.webp
+**/*.mp4
+**/*.mp3
+**/*.wav
+**/*.ogg
+**/*.flac
