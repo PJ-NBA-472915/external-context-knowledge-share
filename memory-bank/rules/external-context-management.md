@@ -1,13 +1,14 @@
 ---
-version: "1.0.0"
-version_type: "patch"
-last_updated: "2025-08-29 09:25"
-change_log: "Initial version with external context management rules and workflows"
-dependencies: ["../context/entrypoint.md"]
+version: 1.0.0
+version_type: patch
+last_updated: 2025-08-29 09:25
+change_log: Initial version with external context management rules and workflows
+dependencies: ['../context/entrypoint.md']
 breaking_changes: false
-author: "system"
-checksum: "sha256:initial_checksum_placeholder"
+author: system
+checksum: sha256:954451b11af0e1d6a45445ee7961ac0ed1713f1e693212c24c568ed65d452c1c
 ---
+
 description: Govern external context retrieval and updates in memory-bank/context.
 globs:
   - "**/*"

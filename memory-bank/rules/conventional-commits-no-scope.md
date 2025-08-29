@@ -1,15 +1,14 @@
 ---
-version: "1.0.0"
-version_type: "patch"
-last_updated: "2025-08-29 09:25"
-change_log: "Initial version with conventional commits rules and task file integration guidelines"
+version: 1.0.0
+version_type: patch
+last_updated: 2025-08-29 09:25
+change_log: Initial version with conventional commits rules and task file integration guidelines
 dependencies: []
 breaking_changes: false
-author: "system"
-checksum: "sha256:initial_checksum_placeholder"
+author: system
+checksum: sha256:be96429c54f742219609a8e3c3f1edc5c24a38e6a123018621d6bf839e566d55
 description: Enforce Conventional Commits format without scope.
-globs:
-  - "**/*"
+globs: ['**/*']
 alwaysApply: true
 ---
 

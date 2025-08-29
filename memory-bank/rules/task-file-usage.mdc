@@ -1,15 +1,14 @@
 ---
-version: "1.0.0"
-version_type: "patch"
-last_updated: "2025-08-29 09:25"
-change_log: "Initial version with task orchestration rules and JSON schema"
+version: 1.0.0
+version_type: patch
+last_updated: 2025-08-29 09:25
+change_log: Initial version with task orchestration rules and JSON schema
 dependencies: []
 breaking_changes: false
-author: "system"
-checksum: "sha256:initial_checksum_placeholder"
+author: system
+checksum: sha256:f73c29558ec5d96e0e68db91f92dd0e2d4c1c269ea827f1f6bbc3d5f7a171f97
 description: Always drive work from a single memory-bank/tasks/[taskname].json file; confirm the task first; keep it live-updated with progress, todos, changelog, and lessons; support a repo-wide In-Progress Tracker and a concise machine-readable Status Report.
-globs:
-  - "**/*"
+globs: ['**/*']
 alwaysApply: true
 ---
 

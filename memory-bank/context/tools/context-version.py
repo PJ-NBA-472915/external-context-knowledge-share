@@ -317,7 +317,7 @@ def main():
     parser.add_argument("--type", "-t", choices=["patch", "minor", "major", "pre-release"],
                        help="Version bump type")
     parser.add_argument("--change-log", "-c", help="Change log description")
-    parser.add_argument("--context-root", default="memory-bank/context",
+    parser.add_argument("--context-root", default="memory-bank",
                        help="Context root directory")
     
     args = parser.parse_args()
