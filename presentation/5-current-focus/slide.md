@@ -6,5 +6,9 @@ Things I am currently looking into:
 2. Memory stores
 3. Gathering data
 
+<br>
+
+Knowledge and rules.
+
 ---
 [Back to beginning](../2-introduction/slide.md) | [Knowledge](../6-knowledge/slide.md)
