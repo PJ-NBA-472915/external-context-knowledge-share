@@ -1,3 +1,14 @@
+---
+version: "1.0.0"
+version_type: "patch"
+last_updated: "2025-08-29 09:25"
+change_log: "Initial version with project overview and agent instructions for Cage multi-agent locking mechanism"
+dependencies: ["../context/entrypoint.md"]
+breaking_changes: false
+author: "system"
+checksum: "sha256:initial_checksum_placeholder"
+---
+
 # Project: Cage - Multi-Agent Locking Mechanism
 
 ## Project Overview

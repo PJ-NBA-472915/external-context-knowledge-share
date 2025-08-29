@@ -1,3 +1,2 @@
-- Will share this repo.
 - Do not talk about external memory here.
 - Quick talk about some practices that seem like big wins.

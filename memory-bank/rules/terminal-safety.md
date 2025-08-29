@@ -1,4 +1,12 @@
 ---
+version: "1.0.0"
+version_type: "patch"
+last_updated: "2025-08-29 09:25"
+change_log: "Initial version with terminal safety rules and command wrapping guidelines"
+dependencies: []
+breaking_changes: false
+author: "system"
+checksum: "sha256:initial_checksum_placeholder"
 description: Always run terminal commands through a non-interactive, timed bash subshell.
 alwaysApply: true
 ---

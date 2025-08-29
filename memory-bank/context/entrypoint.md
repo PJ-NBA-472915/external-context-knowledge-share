@@ -1,3 +1,14 @@
+---
+version: 1.1.0
+version_type: minor
+last_updated: 2025-08-29 09:35
+change_log: Added version control metadata and automated version bumping tool
+dependencies: []
+breaking_changes: false
+author: system
+checksum: sha256:85205b01d9bc4439b462881f751688bc4e873159aeff7176ded0c1116d1d7817
+---
+
 # memory-bank/context Directory Guide for AI Agents
 
 This directory contains contextual information and documentation that helps AI agents understand the project structure, requirements, and conventions. This guide provides detailed instructions on how to navigate, interpret, and utilize this context effectively.

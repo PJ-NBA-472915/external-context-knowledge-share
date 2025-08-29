@@ -1,4 +1,12 @@
 ---
+version: "1.0.0"
+version_type: "patch"
+last_updated: "2025-08-29 09:25"
+change_log: "Initial version with context entrypoint reading rules"
+dependencies: ["../context/entrypoint.md"]
+breaking_changes: false
+author: "system"
+checksum: "sha256:initial_checksum_placeholder"
 description: Always start a chat by reading the memory-bank/context/entrypoint.md file. Read only what you need to perform your task as you understand it, and if you have any questions go to the entrypoint and try to find it in the memory-bank first before going to the user.
 alwaysApply: false
 ---

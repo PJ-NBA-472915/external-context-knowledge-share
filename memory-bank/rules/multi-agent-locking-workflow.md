@@ -1,4 +1,12 @@
 ---
+version: "1.0.0"
+version_type: "patch"
+last_updated: "2025-08-29 09:25"
+change_log: "Initial version with multi-agent locking workflow and coordination guidelines"
+dependencies: []
+breaking_changes: false
+author: "system"
+checksum: "sha256:initial_checksum_placeholder"
 description: Guidelines for autonomous agents to use the repo-local locking mechanism for concurrent work.
 globs:
   - "**/*"

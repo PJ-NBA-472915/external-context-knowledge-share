@@ -1,0 +1,86 @@
+{
+  "id": "2025-08-29-implement-version-controlled-context-tracking",
+  "title": "Implement Version Controlled Approach to Tracking Context Externally",
+  "owner": "Jaak",
+  "status": "in-progress",
+  "created_at": "2025-08-29 09:25",
+  "updated_at": "2025-08-29 09:25",
+  "progress_percent": 33,
+  "tags": ["context-management", "version-control", "external-tracking", "implementation"],
+  "summary": "Implement a version controlled approach for tracking context externally, enabling systematic versioning, change tracking, and rollback capabilities for the memory-bank context system.",
+  "success_criteria": [
+    {"text": "Context files are version controlled with semantic versioning", "checked": false},
+    {"text": "Change history is tracked and accessible for all context updates", "checked": false},
+    {"text": "Rollback mechanisms allow reverting to previous context versions", "checked": false},
+    {"text": "Context dependencies and relationships are tracked across versions", "checked": false},
+    {"text": "Automated version bumping based on context change types", "checked": false}
+  ],
+  "acceptance_checks": [
+    {"text": "Context files include version metadata and change logs", "checked": false},
+    {"text": "Git integration provides version history and branching for context", "checked": false},
+    {"text": "Context validation ensures version consistency across the system", "checked": false},
+    {"text": "Rollback commands can restore previous context states", "checked": false},
+    {"text": "Context versioning follows semantic versioning principles", "checked": false}
+  ],
+  "subtasks": [
+    "Design version control schema for context files",
+    "Implement context versioning metadata structure",
+    "Create automated version bumping system",
+    "Build rollback and restore functionality",
+    "Integrate with Git for distributed version control",
+    "Add context validation and consistency checks",
+    "Create CLI tools for context version management",
+    "Document version control workflows and best practices"
+  ],
+  "todo": [
+    {"text": "Analyze current context file structure and identify versioning requirements", "status": "done", "date_started": "2025-08-29 09:25", "date_stopped": "2025-08-29 09:25"},
+    {"text": "Design version metadata schema for context files", "status": "done", "date_started": "2025-08-29 09:25", "date_stopped": "2025-08-29 09:25"},
+    {"text": "Create version control workflow documentation", "status": "done", "date_started": "2025-08-29 09:25", "date_stopped": "2025-08-29 09:25"},
+    {"text": "Implement context file versioning metadata", "status": "done", "date_started": "2025-08-29 09:25", "date_stopped": "2025-08-29 09:25"},
+    {"text": "Build automated version bumping logic", "status": "not-started", "date_started": "2025-08-29 09:25", "date_stopped": null},
+    {"text": "Create context validation system", "status": "not-started", "date_started": null, "date_stopped": null},
+    {"text": "Implement rollback and restore functionality", "status": "not-started", "date_started": null, "date_stopped": null},
+    {"text": "Build CLI tools for context version management", "status": "not-started", "date_started": null, "date_stopped": null},
+    {"text": "Integrate with Git for distributed version control", "status": "not-started", "date_started": null, "date_stopped": null},
+    {"text": "Create comprehensive testing suite", "status": "not-started", "date_started": null, "date_stopped": null},
+    {"text": "Document version control workflows and best practices", "status": "not-started", "date_started": null, "date_stopped": null},
+    {"text": "Update existing context files with version metadata", "status": "not-started", "date_started": null, "date_stopped": null},
+    {"text": "Validate complete system functionality", "status": "not-started", "date_started": null, "date_stopped": null}
+  ],
+  "changelog": [
+    {"timestamp": "2025-08-29 09:25", "text": "Task file created for implementing version controlled context tracking system"},
+    {"timestamp": "2025-08-29 09:25", "text": "Task confirmed and implementation started - beginning analysis of current context file structure"},
+    {"timestamp": "2025-08-29 09:25", "text": "Completed analysis, schema design, workflow documentation, and metadata implementation - added version metadata to all context files and created version history structure"}
+  ],
+  "decisions": [
+    "Version control will follow semantic versioning principles (MAJOR.MINOR.PATCH)",
+    "Context files will include version metadata in YAML frontmatter",
+    "Git will be used as the primary version control system for context tracking",
+    "Automated version bumping will be based on context change types and impact"
+  ],
+  "lessons_learned": [],
+  "issues_risks": [
+    "Risk: Complex context dependencies may complicate version management",
+    "Risk: Rollback operations may need to handle cross-file dependencies",
+    "Risk: Performance impact of version validation on large context sets"
+  ],
+  "next_steps": [
+    "Begin analysis of current context file structure",
+    "Research semantic versioning best practices for documentation",
+    "Design version metadata schema"
+  ],
+  "references": [
+    "memory-bank/rules/external-context-management.md",
+    "memory-bank/context/entrypoint.md",
+    "Semantic Versioning specification (semver.org)"
+  ],
+  "prompts": [
+    {
+      "timestamp": "2025-08-29 09:25",
+      "text": "Please create a task for an implementation of the version controlled approach to tracking context externally",
+      "context": "User wants to implement version control for external context tracking system"
+    }
+  ],
+  "migration": {"migrated": false, "source_path": null, "method": null, "migrated_at": null},
+  "metadata": {}
+}
