@@ -21,7 +21,7 @@ class ContextVersionManager:
     """Manages version control for context files in the memory-bank system."""
     
     def __init__(self, context_root: str = "memory-bank"):
-        self.context_root = Path(context_root)
+        self.context_root = Path(context_root).resolve()
         self.versions_dir = self.context_root / "context" / "versions"
         
     def parse_frontmatter(self, content: str) -> Tuple[Dict, str]:
